@@ -5,9 +5,9 @@ import {
   Search, 
   FileText, 
   Sparkles,
-  DollarSign,
-  UserCheck,
-  Calendar
+  DollarSign, 
+  UserCheck, 
+  Calendar 
 } from 'lucide-react';
 
 export default function SalesPurchases({ cars, onPrintInvoice }) {
@@ -51,7 +51,7 @@ export default function SalesPurchases({ cars, onPrintInvoice }) {
           </div>
 
           <div style={{ display: 'flex', gap: '12px' }}>
-            <div style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)', padding: '8px 16px', borderRadius: 'var(--radius-sm)' }}>
+            <div style={{ background: 'rgba(52, 211, 153, 0.1)', border: '1px solid rgba(52, 211, 153, 0.25)', padding: '8px 16px', borderRadius: 'var(--radius-sm)' }}>
               <span style={{ fontSize: '0.78rem', color: '#a7f3d0' }}>إجمالي أرباح المبيعات المعروضة:</span>
               <div className="currency-emerald" style={{ fontSize: '1.1rem' }}>+{formatCurrency(totalProfit)} ج.م</div>
             </div>
@@ -106,7 +106,7 @@ export default function SalesPurchases({ cars, onPrintInvoice }) {
                       <span style={{ fontWeight: 800, color: 'var(--accent-primary)' }}>{car.id}</span>
                     </td>
                     <td>
-                      <div style={{ fontWeight: 800, color: '#fff' }}>{car.brand} {car.model}</div>
+                      <div style={{ fontWeight: 800, color: 'var(--text-main)' }}>{car.brand} {car.model}</div>
                       <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>موديل {car.year} | {car.color}</div>
                     </td>
                     <td>
@@ -114,7 +114,7 @@ export default function SalesPurchases({ cars, onPrintInvoice }) {
                     </td>
                     <td>{formatCurrency(car.totalCost)} ج.م</td>
                     <td>
-                      <span style={{ fontWeight: 800, color: '#fff' }}>{formatCurrency(s.actualSalePrice)} ج.م</span>
+                      <span style={{ fontWeight: 800, color: 'var(--text-main)' }}>{formatCurrency(s.actualSalePrice)} ج.م</span>
                     </td>
                     <td>
                       <span className="currency-emerald">+{formatCurrency(s.netProfit)} ج.م</span>
@@ -123,7 +123,7 @@ export default function SalesPurchases({ cars, onPrintInvoice }) {
                       <span className="badge badge-emerald">%{s.profitMargin}</span>
                     </td>
                     <td>
-                      <div style={{ fontWeight: 700 }}>{s.buyerName}</div>
+                      <div style={{ fontWeight: 700, color: 'var(--text-main)' }}>{s.buyerName}</div>
                       <div style={{ fontSize: '0.78rem', color: 'var(--accent-light)' }}>{s.buyerPhone}</div>
                     </td>
                     <td>
@@ -151,10 +151,10 @@ export default function SalesPurchases({ cars, onPrintInvoice }) {
           </tbody>
           {filteredSales.length > 0 && (
             <tfoot>
-              <tr style={{ background: '#090d14', fontWeight: 900, borderTop: '2px solid var(--border-color)' }}>
+              <tr style={{ background: '#0f172a', fontWeight: 900, borderTop: '2px solid var(--border-color)' }}>
                 <td colSpan="3" style={{ color: 'var(--accent-light)' }}>إجمالي مبيعات جدول العرض الحالي:</td>
                 <td>{formatCurrency(totalCost)} ج.م</td>
-                <td style={{ color: '#fff' }}>{formatCurrency(totalRevenue)} ج.م</td>
+                <td style={{ color: 'var(--text-main)' }}>{formatCurrency(totalRevenue)} ج.م</td>
                 <td className="currency-emerald">+{formatCurrency(totalProfit)} ج.م</td>
                 <td colSpan="5"></td>
               </tr>

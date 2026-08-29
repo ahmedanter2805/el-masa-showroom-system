@@ -28,41 +28,42 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAddCar, onExport
     <>
       {/* Top Header Banner */}
       <header style={{
-        background: 'rgba(10, 13, 20, 0.95)',
+        background: 'rgba(2, 6, 23, 0.95)',
         borderBottom: '1px solid var(--border-color)',
         position: 'sticky',
         top: 0,
         zIndex: 100,
-        backdropFilter: 'blur(15px)'
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)'
       }}>
         <div style={{
           maxWidth: '1350px',
           margin: '0 auto',
-          padding: '12px 16px',
+          padding: '14px 20px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '16px'
         }}>
           
-          {/* Logo & Brand Emblem */}
+          {/* Logo & Brand */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
             <div style={{
-              width: '46px',
-              height: '46px',
+              width: '44px',
+              height: '44px',
               borderRadius: '12px',
-              background: 'linear-gradient(135deg, #1f2738 0%, #0d121c 100%)',
-              border: '1.5px solid var(--accent-primary)',
+              background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+              border: '1px solid rgba(99, 102, 241, 0.3)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: 'var(--accent-glow)'
+              boxShadow: '0 0 20px rgba(99, 102, 241, 0.1)'
             }}>
-              <span style={{ fontSize: '1.4rem' }}>💎</span>
+              <span style={{ fontSize: '1.3rem' }}>💎</span>
             </div>
             <div>
               <div style={{
-                fontSize: '1.25rem',
+                fontSize: '1.2rem',
                 fontWeight: 900,
                 background: 'var(--accent-gradient)',
                 WebkitBackgroundClip: 'text',
@@ -72,26 +73,26 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAddCar, onExport
               }}>
                 معرض الماسة للسيارات
               </div>
-              <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 500, letterSpacing: '0.3px' }}>
                 نظام إدارة المبيعات والتكلفة والأرباح
               </div>
             </div>
           </div>
 
-          {/* Quick Header Profit Pill & Action Buttons */}
+          {/* Profit Pill & Add Button */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div className="no-mobile-pill" style={{
-              background: 'rgba(229, 193, 88, 0.08)',
-              border: '1px solid var(--border-active)',
-              padding: '6px 14px',
+              background: 'rgba(99, 102, 241, 0.06)',
+              border: '1px solid rgba(99, 102, 241, 0.2)',
+              padding: '6px 16px',
               borderRadius: '50px',
               display: 'flex',
               alignItems: 'center',
               gap: '8px'
             }}>
-              <Sparkles size={16} color="var(--accent-primary)" />
-              <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: 700 }}>صافي الربح العام:</span>
-              <span className="currency-emerald" style={{ fontSize: '0.95rem' }}>
+              <Sparkles size={15} color="var(--accent-primary)" />
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>صافي الربح العام:</span>
+              <span className="currency-emerald" style={{ fontSize: '0.92rem' }}>
                 {formatCurrency(netProfit)} ج.م
               </span>
             </div>
@@ -103,17 +104,17 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAddCar, onExport
           </div>
         </div>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Navigation Tabs */}
         <div style={{
-          background: '#0e131f',
-          borderTop: '1px solid rgba(255, 255, 255, 0.04)'
+          background: 'rgba(15, 23, 42, 0.6)',
+          borderTop: '1px solid rgba(148, 163, 184, 0.06)'
         }} className="no-mobile-pill">
           <div style={{
             maxWidth: '1350px',
             margin: '0 auto',
-            padding: '0 16px',
+            padding: '0 20px',
             display: 'flex',
-            gap: '6px',
+            gap: '2px',
             overflowX: 'auto'
           }}>
             {navItems.map(item => {
@@ -124,22 +125,23 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAddCar, onExport
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
                   style={{
-                    background: isActive ? 'rgba(229, 193, 88, 0.12)' : 'transparent',
+                    background: isActive ? 'rgba(99, 102, 241, 0.1)' : 'transparent',
                     color: isActive ? 'var(--accent-light)' : 'var(--text-muted)',
                     border: 'none',
-                    borderBottom: isActive ? '2.5px solid var(--accent-primary)' : '2.5px solid transparent',
+                    borderBottom: isActive ? '2px solid var(--accent-primary)' : '2px solid transparent',
                     padding: '12px 18px',
-                    fontWeight: isActive ? 800 : 600,
-                    fontSize: '0.92rem',
+                    fontWeight: isActive ? 700 : 500,
+                    fontSize: '0.9rem',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
                     whiteSpace: 'nowrap',
-                    transition: 'all 0.2s ease'
+                    transition: 'all 0.2s ease',
+                    borderRadius: '0'
                   }}
                 >
-                  <Icon size={18} color={isActive ? 'var(--accent-primary)' : 'var(--text-muted)'} />
+                  <Icon size={17} color={isActive ? 'var(--accent-primary)' : 'var(--text-muted)'} />
                   <span>{item.label}</span>
                 </button>
               );
@@ -148,16 +150,17 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAddCar, onExport
         </div>
       </header>
 
-      {/* Mobile Bottom Navigation Bar */}
+      {/* Mobile Bottom Navigation */}
       <nav style={{
         position: 'fixed',
         bottom: 0,
         left: 0,
         right: 0,
-        height: '65px',
-        background: 'rgba(10, 13, 20, 0.98)',
-        borderTop: '1px solid var(--border-color)',
-        backdropFilter: 'blur(16px)',
+        height: '64px',
+        background: 'rgba(2, 6, 23, 0.98)',
+        borderTop: '1px solid rgba(148, 163, 184, 0.08)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
         zIndex: 999,
         display: 'flex',
         alignItems: 'center',
@@ -174,17 +177,18 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAddCar, onExport
               style={{
                 background: 'transparent',
                 border: 'none',
-                color: isActive ? 'var(--accent-primary)' : '#6b7280',
+                color: isActive ? 'var(--accent-primary)' : '#64748b',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '3px',
-                fontSize: '0.7rem',
-                fontWeight: isActive ? 800 : 600,
+                fontSize: '0.68rem',
+                fontWeight: isActive ? 700 : 500,
                 width: '100%',
                 height: '100%',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                transition: 'color 0.2s ease'
               }}
             >
               <Icon size={20} strokeWidth={isActive ? 2.5 : 1.8} />

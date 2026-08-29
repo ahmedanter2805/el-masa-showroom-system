@@ -100,9 +100,9 @@ export default function Inventory({ cars, onOpenAddCar, onEditCar, onDeleteCar, 
                 key={btn.id}
                 onClick={() => setStatusFilter(btn.id)}
                 style={{
-                  background: statusFilter === btn.id ? 'var(--accent-gradient)' : 'rgba(255, 255, 255, 0.05)',
-                  color: statusFilter === btn.id ? '#0b0e14' : 'var(--text-main)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  background: statusFilter === btn.id ? 'var(--accent-gradient)' : 'rgba(148, 163, 184, 0.06)',
+                  color: statusFilter === btn.id ? '#020617' : 'var(--text-main)',
+                  border: statusFilter === btn.id ? '1px solid transparent' : '1px solid var(--border-color)',
                   borderRadius: 'var(--radius-sm)',
                   padding: '8px 16px',
                   fontWeight: 700,
@@ -134,7 +134,7 @@ export default function Inventory({ cars, onOpenAddCar, onEditCar, onDeleteCar, 
               padding: '20px',
               display: 'flex',
               flexDirection: 'column',
-              justify: 'space-between',
+              justifyContent: 'space-between',
               gap: '14px',
               position: 'relative'
             }}>
@@ -144,7 +144,7 @@ export default function Inventory({ cars, onOpenAddCar, onEditCar, onDeleteCar, 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
                   <div>
                     <span style={{ fontSize: '0.78rem', color: 'var(--accent-primary)', fontWeight: 800 }}>{car.id}</span>
-                    <h3 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#fff', lineHeight: 1.3 }}>
+                    <h3 style={{ fontSize: '1.2rem', fontWeight: 900, color: 'var(--text-main)', lineHeight: 1.3 }}>
                       {car.brand} {car.model}
                     </h3>
                   </div>
@@ -152,61 +152,61 @@ export default function Inventory({ cars, onOpenAddCar, onEditCar, onDeleteCar, 
                 </div>
 
                 <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '12px' }}>
-                  <span style={{ background: '#090d14', padding: '3px 8px', borderRadius: '4px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                    موديل: <strong>{car.year}</strong>
+                  <span style={{ background: '#0f172a', border: '1px solid var(--border-color)', padding: '3px 8px', borderRadius: '4px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                    موديل: <strong style={{ color: 'var(--text-main)' }}>{car.year}</strong>
                   </span>
-                  <span style={{ background: '#090d14', padding: '3px 8px', borderRadius: '4px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                    اللون: <strong>{car.color}</strong>
+                  <span style={{ background: '#0f172a', border: '1px solid var(--border-color)', padding: '3px 8px', borderRadius: '4px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                    اللون: <strong style={{ color: 'var(--text-main)' }}>{car.color}</strong>
                   </span>
                   {car.plateNumber && (
-                    <span style={{ background: '#090d14', padding: '3px 8px', borderRadius: '4px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                      اللوحة: <strong>{car.plateNumber}</strong>
+                    <span style={{ background: '#0f172a', border: '1px solid var(--border-color)', padding: '3px 8px', borderRadius: '4px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                      اللوحة: <strong style={{ color: 'var(--text-main)' }}>{car.plateNumber}</strong>
                     </span>
                   )}
                 </div>
 
-                <div style={{ fontSize: '0.8rem', color: '#9ca3af', fontFamily: 'monospace', background: 'rgba(255, 255, 255, 0.03)', padding: '6px 10px', borderRadius: '6px', marginBottom: '14px' }}>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'monospace', background: 'rgba(148, 163, 184, 0.03)', border: '1px solid var(--border-color)', padding: '6px 10px', borderRadius: '6px', marginBottom: '14px' }}>
                   VIN: {car.vin}
                 </div>
               </div>
 
               {/* Financial Breakdown per Car */}
               <div style={{
-                background: '#0a0e17',
+                background: '#0f172a',
                 borderRadius: 'var(--radius-sm)',
                 padding: '12px',
-                border: '1px solid rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(148, 163, 184, 0.06)',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '8px'
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem' }}>
                   <span style={{ color: 'var(--text-muted)' }}>سعر الشراء:</span>
-                  <span style={{ fontWeight: 700 }}>{formatCurrency(car.purchasePrice)} ج.م</span>
+                  <span style={{ fontWeight: 700, color: 'var(--text-main)' }}>{formatCurrency(car.purchasePrice)} ج.م</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem' }}>
                   <span style={{ color: 'var(--text-muted)' }}>مصروفات الصيانة/التجهيز:</span>
-                  <span style={{ color: '#f87171', fontWeight: 700 }}>+{formatCurrency(car.prepExpenses)} ج.م</span>
+                  <span style={{ color: 'var(--ruby)', fontWeight: 700 }}>+{formatCurrency(car.prepExpenses)} ج.م</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '6px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', borderTop: '1px solid rgba(148, 163, 184, 0.08)', paddingTop: '6px' }}>
                   <span style={{ fontWeight: 800, color: 'var(--text-main)' }}>إجمالي التكلفة:</span>
                   <span className="currency-accent" style={{ fontSize: '1rem' }}>{formatCurrency(car.totalCost)} ج.م</span>
                 </div>
 
                 {car.status === 'sold' && car.saleDetails ? (
                   <div style={{
-                    background: 'rgba(16, 185, 129, 0.12)',
+                    background: 'rgba(52, 211, 153, 0.08)',
                     padding: '8px 10px',
                     borderRadius: '6px',
-                    border: '1px solid rgba(16, 185, 129, 0.3)',
+                    border: '1px solid rgba(52, 211, 153, 0.2)',
                     marginTop: '4px'
                   }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem' }}>
-                      <span style={{ color: '#a7f3d0' }}>سعر البيع الفعلي:</span>
-                      <span style={{ fontWeight: 800, color: '#34d399' }}>{formatCurrency(car.saleDetails.actualSalePrice)} ج.م</span>
+                      <span style={{ color: 'var(--emerald)' }}>سعر البيع الفعلي:</span>
+                      <span style={{ fontWeight: 800, color: 'var(--emerald)' }}>{formatCurrency(car.saleDetails.actualSalePrice)} ج.م</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', marginTop: '2px' }}>
-                      <span style={{ color: '#a7f3d0', fontWeight: 800 }}>صافي الربح المحقق:</span>
+                      <span style={{ color: 'var(--emerald)', fontWeight: 800 }}>صافي الربح المحقق:</span>
                       <span className="currency-emerald">+{formatCurrency(car.saleDetails.netProfit)} ج.م ({car.saleDetails.profitMargin}%)</span>
                     </div>
                   </div>

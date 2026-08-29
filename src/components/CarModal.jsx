@@ -80,7 +80,7 @@ export default function CarModal({ isOpen, onClose, onSave, carToEdit }) {
             <Car size={22} color="var(--accent-primary)" />
             <span>{carToEdit ? `تعديل بيانات سيارة (${carToEdit.id})` : 'إضافة سيارة جديدة للمخزون'}</span>
           </div>
-          <button onClick={onClose} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', fontSize: '1.2rem' }}>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '1.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <X size={20} />
           </button>
         </div>
@@ -164,7 +164,7 @@ export default function CarModal({ isOpen, onClose, onSave, carToEdit }) {
             </div>
 
             {/* Financials Calculation Section */}
-            <div style={{ background: '#090d14', padding: '16px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)', marginBottom: '16px' }}>
+            <div style={{ background: '#0f172a', padding: '16px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)', marginBottom: '16px' }}>
               <div style={{ fontSize: '0.9rem', fontWeight: 800, color: 'var(--accent-light)', marginBottom: '12px' }}>
                 التكاليف المالية وسعر البيع
               </div>
@@ -194,7 +194,7 @@ export default function CarModal({ isOpen, onClose, onSave, carToEdit }) {
                 </div>
               </div>
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(229, 193, 88, 0.08)', padding: '10px 14px', borderRadius: '8px', marginBottom: '12px', border: '1px solid var(--border-active)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(99, 102, 241, 0.06)', padding: '10px 14px', borderRadius: '8px', marginBottom: '12px', border: '1px solid var(--border-active)' }}>
                 <span style={{ fontSize: '0.88rem', fontWeight: 800, color: 'var(--text-main)' }}>إجمالي التكلفة الحسابية على المعرض:</span>
                 <span className="currency-accent" style={{ fontSize: '1.1rem' }}>
                   {new Intl.NumberFormat('ar-EG').format(totalCostCalculated)} ج.م

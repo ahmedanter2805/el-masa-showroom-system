@@ -4,12 +4,12 @@ import {
   Plus, 
   Trash2, 
   DollarSign, 
-  Calendar,
-  Tag,
-  Building,
-  Zap,
-  Megaphone,
-  Users
+  Calendar, 
+  Tag, 
+  Building, 
+  Zap, 
+  Megaphone, 
+  Users 
 } from 'lucide-react';
 
 export default function Expenses({ expenses, onAddExpense, onDeleteExpense }) {
@@ -43,10 +43,10 @@ export default function Expenses({ expenses, onAddExpense, onDeleteExpense }) {
   const getCategoryLabel = (cat) => {
     switch (cat) {
       case 'rent': return { label: 'إيجار المقر', icon: Building, color: 'var(--accent-primary)' };
-      case 'utilities': return { label: 'مرافق وكهرباء', icon: Zap, color: '#60a5fa' };
+      case 'utilities': return { label: 'مرافق وكهرباء', icon: 'var(--sapphire)' };
       case 'marketing': return { label: 'تسويق وإعلانات', icon: Megaphone, color: '#c084fc' };
-      case 'salaries': return { label: 'رواتب موظفين', icon: Users, color: '#34d399' };
-      default: return { label: 'مصروفات أخرى', icon: Tag, color: '#9ca3af' };
+      case 'salaries': return { label: 'رواتب موظفين', icon: Users, color: 'var(--emerald)' };
+      default: return { label: 'مصروفات أخرى', icon: Tag, color: 'var(--text-muted)' };
     }
   };
 
@@ -66,9 +66,9 @@ export default function Expenses({ expenses, onAddExpense, onDeleteExpense }) {
             </p>
           </div>
 
-          <div style={{ background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)', padding: '8px 18px', borderRadius: 'var(--radius-sm)' }}>
+          <div style={{ background: 'rgba(251, 113, 133, 0.1)', border: '1px solid rgba(251, 113, 133, 0.25)', padding: '8px 18px', borderRadius: 'var(--radius-sm)' }}>
             <span style={{ fontSize: '0.78rem', color: '#fca5a5' }}>إجمالي المصروفات التشغيلية:</span>
-            <div style={{ fontSize: '1.2rem', fontWeight: 900, color: '#ef4444', fontFamily: 'monospace' }}>
+            <div style={{ fontSize: '1.2rem', fontWeight: 900, color: 'var(--ruby)', fontFamily: 'monospace' }}>
               {formatCurrency(totalExpenseSum)} ج.م
             </div>
           </div>
@@ -175,12 +175,12 @@ export default function Expenses({ expenses, onAddExpense, onDeleteExpense }) {
                 const Icon = catInfo.icon;
                 return (
                   <div key={exp.id} style={{
-                    background: '#090d14',
-                    border: '1px solid rgba(255, 255, 255, 0.06)',
+                    background: '#0f172a',
+                    border: '1px solid var(--border-color)',
                     borderRadius: 'var(--radius-sm)',
                     padding: '12px 14px',
                     display: 'flex',
-                    justify: 'space-between',
+                    justifyContent: 'space-between',
                     alignItems: 'center'
                   }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -188,15 +188,16 @@ export default function Expenses({ expenses, onAddExpense, onDeleteExpense }) {
                         width: '36px',
                         height: '36px',
                         borderRadius: '8px',
-                        background: 'rgba(255, 255, 255, 0.05)',
+                        background: 'rgba(99, 102, 241, 0.08)',
+                        border: '1px solid var(--border-color)',
                         display: 'flex',
                         alignItems: 'center',
-                        justify: 'center'
+                        justifyContent: 'center'
                       }}>
                         <Icon size={18} color={catInfo.color} />
                       </div>
                       <div>
-                        <div style={{ fontWeight: 800, color: '#fff', fontSize: '0.95rem' }}>{exp.title}</div>
+                        <div style={{ fontWeight: 800, color: 'var(--text-main)', fontSize: '0.95rem' }}>{exp.title}</div>
                         <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
                           {catInfo.label} | {exp.date}
                         </div>
@@ -204,7 +205,7 @@ export default function Expenses({ expenses, onAddExpense, onDeleteExpense }) {
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                      <div style={{ fontWeight: 900, color: '#f87171', fontSize: '1rem', fontFamily: 'monospace' }}>
+                      <div style={{ fontWeight: 900, color: 'var(--ruby)', fontSize: '1rem', fontFamily: 'monospace' }}>
                         -{formatCurrency(exp.amount)} ج.م
                       </div>
                       <button 

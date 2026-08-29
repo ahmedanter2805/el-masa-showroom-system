@@ -6,9 +6,9 @@ import {
   Smartphone, 
   RefreshCw, 
   CheckCircle2, 
-  AlertCircle,
-  FileText,
-  Sparkles
+  AlertCircle, 
+  FileText, 
+  Sparkles 
 } from 'lucide-react';
 import { importCarsFromExcel } from '../utils/excel';
 
@@ -43,10 +43,10 @@ export default function ExcelManager({ cars, installments, expenses, kpis, onExp
     <div className="animate-fade" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       
       {/* Excel Hub Banner */}
-      <div className="glass-card" style={{ padding: '24px', background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(18, 24, 36, 0.95) 100%)' }}>
+      <div className="glass-card" style={{ padding: '24px', background: 'linear-gradient(135deg, rgba(52, 211, 153, 0.08) 0%, rgba(15, 23, 42, 0.95) 100%)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '12px' }}>
-          <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(16, 185, 129, 0.15)', display: 'flex', alignItems: 'center', justifyCenter: 'center', border: '1px solid rgba(16, 185, 129, 0.3)' }}>
-            <FileSpreadsheet size={26} color="#34d399" />
+          <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(52, 211, 153, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(52, 211, 153, 0.25)' }}>
+            <FileSpreadsheet size={26} color="var(--emerald)" />
           </div>
           <div>
             <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: 'var(--accent-light)' }}>
@@ -94,7 +94,7 @@ export default function ExcelManager({ cars, installments, expenses, kpis, onExp
         {/* Import from Excel Card */}
         <div className="glass-card" style={{ padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#60a5fa', fontWeight: 800, marginBottom: '10px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--sapphire)', fontWeight: 800, marginBottom: '10px' }}>
               <Upload size={22} />
               <span style={{ fontSize: '1.15rem' }}>استيراد سيارات من شيت Excel</span>
             </div>
@@ -112,12 +112,12 @@ export default function ExcelManager({ cars, installments, expenses, kpis, onExp
 
             {importStatus && (
               <div style={{
-                background: importStatus.type === 'success' ? 'rgba(16, 185, 129, 0.12)' : 'rgba(239, 68, 68, 0.12)',
-                border: `1px solid ${importStatus.type === 'success' ? 'rgba(16, 185, 129, 0.3)' : 'rgba(239, 68, 68, 0.3)'}`,
+                background: importStatus.type === 'success' ? 'rgba(52, 211, 153, 0.12)' : 'rgba(251, 113, 133, 0.12)',
+                border: `1px solid ${importStatus.type === 'success' ? 'rgba(52, 211, 153, 0.3)' : 'rgba(251, 113, 133, 0.3)'}`,
                 padding: '10px 14px',
                 borderRadius: '8px',
                 fontSize: '0.88rem',
-                color: importStatus.type === 'success' ? '#34d399' : '#f87171',
+                color: importStatus.type === 'success' ? 'var(--emerald)' : 'var(--ruby)',
                 marginBottom: '16px',
                 display: 'flex',
                 alignItems: 'center',
@@ -131,7 +131,7 @@ export default function ExcelManager({ cars, installments, expenses, kpis, onExp
 
           <button 
             className="btn-outline" 
-            style={{ width: '100%', justifyContent: 'center', padding: '12px', borderColor: '#3b82f6', color: '#93c5fd' }}
+            style={{ width: '100%', justifyContent: 'center', padding: '12px', borderColor: 'rgba(96, 165, 250, 0.4)', color: 'var(--sapphire)' }}
             onClick={() => fileInputRef.current?.click()}
             disabled={loading}
           >
@@ -161,7 +161,7 @@ export default function ExcelManager({ cars, installments, expenses, kpis, onExp
           <span style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-main)' }}>إعادة تعيين البيانات الافتراضية للمعرض:</span>
           <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'block' }}>تسترجع البيانات النموذجية الأولية للتجربة والتوضيح.</span>
         </div>
-        <button className="btn-outline" style={{ borderColor: 'rgba(239, 68, 68, 0.4)', color: '#fca5a5' }} onClick={onResetDemo}>
+        <button className="btn-outline" style={{ borderColor: 'rgba(251, 113, 133, 0.4)', color: '#fca5a5' }} onClick={onResetDemo}>
           <RefreshCw size={16} />
           <span>إعادة ضبط البيانات العرضية</span>
         </button>

@@ -157,7 +157,7 @@ export default function SaleModal({ car, isOpen, onClose, onConfirmSale }) {
             </div>
 
             {paymentMethod === 'installment' && (
-              <div style={{ background: '#090d14', padding: '14px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)', marginBottom: '16px' }}>
+              <div style={{ background: '#0f172a', padding: '14px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)', marginBottom: '16px' }}>
                 <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#fbbf24', marginBottom: '10px' }}>
                   تفاصيل التقسيط والأقساط الشهري
                 </div>

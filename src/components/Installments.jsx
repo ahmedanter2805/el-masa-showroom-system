@@ -6,9 +6,9 @@ import {
   Calendar, 
   CheckCircle2, 
   Clock, 
-  AlertCircle,
-  PlusCircle,
-  History
+  AlertCircle, 
+  PlusCircle, 
+  History 
 } from 'lucide-react';
 
 export default function Installments({ installments, onRecordPayment }) {
@@ -58,9 +58,9 @@ export default function Installments({ installments, onRecordPayment }) {
           </div>
 
           <div style={{ display: 'flex', gap: '12px' }}>
-            <div style={{ background: 'rgba(245, 158, 11, 0.1)', border: '1px solid rgba(245, 158, 11, 0.3)', padding: '8px 16px', borderRadius: 'var(--radius-sm)' }}>
+            <div style={{ background: 'rgba(251, 191, 36, 0.1)', border: '1px solid rgba(251, 191, 36, 0.25)', padding: '8px 16px', borderRadius: 'var(--radius-sm)' }}>
               <span style={{ fontSize: '0.78rem', color: '#fcd34d' }}>إجمالي الأقساط المتبقية للتحصيل:</span>
-              <div style={{ fontSize: '1.1rem', fontWeight: 900, color: '#fbbf24', fontFamily: 'monospace' }}>{formatCurrency(totalRemaining)} ج.م</div>
+              <div style={{ fontSize: '1.1rem', fontWeight: 900, color: 'var(--amber)', fontFamily: 'monospace' }}>{formatCurrency(totalRemaining)} ج.م</div>
             </div>
           </div>
         </div>
@@ -110,13 +110,13 @@ export default function Installments({ installments, onRecordPayment }) {
                     <span style={{ fontWeight: 800, color: 'var(--accent-primary)' }}>{inst.id}</span>
                   </td>
                   <td>
-                    <div style={{ fontWeight: 800, color: '#fff' }}>{inst.buyerName}</div>
+                    <div style={{ fontWeight: 800, color: 'var(--text-main)' }}>{inst.buyerName}</div>
                     <div style={{ fontSize: '0.78rem', color: 'var(--accent-light)' }}>{inst.buyerPhone}</div>
                   </td>
                   <td>{inst.carTitle}</td>
                   <td>{formatCurrency(inst.totalAmount)} ج.م</td>
                   <td style={{ color: 'var(--emerald)', fontWeight: 700 }}>{formatCurrency(inst.paidAmount)} ج.م</td>
-                  <td style={{ color: '#f87171', fontWeight: 800 }}>{formatCurrency(inst.remainingAmount)} ج.م</td>
+                  <td style={{ color: 'var(--ruby)', fontWeight: 800 }}>{formatCurrency(inst.remainingAmount)} ج.م</td>
                   <td style={{ fontWeight: 700 }}>{formatCurrency(inst.monthlyAmount)} ج.م</td>
                   <td>
                     <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: 'var(--text-muted)' }}>
@@ -172,14 +172,14 @@ export default function Installments({ installments, onRecordPayment }) {
                 <CreditCard size={22} color="var(--accent-primary)" />
                 <span>تحصيل قسط شهري لـ {selectedInst.buyerName}</span>
               </div>
-              <button onClick={() => setSelectedInst(null)} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', fontSize: '1.2rem' }}>✕</button>
+              <button onClick={() => setSelectedInst(null)} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '1.2rem' }}>✕</button>
             </div>
             
             <form onSubmit={handleCollectSubmit}>
               <div className="modal-body">
-                <div style={{ background: '#090d14', padding: '14px', borderRadius: 'var(--radius-sm)', marginBottom: '16px', border: '1px solid var(--border-color)' }}>
-                  <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>السيارة: <strong>{selectedInst.carTitle}</strong></div>
-                  <div style={{ fontSize: '0.9rem', color: '#f87171', marginTop: '4px' }}>المبلغ المتبقي الكلي: <strong>{formatCurrency(selectedInst.remainingAmount)} ج.م</strong></div>
+                <div style={{ background: '#0f172a', padding: '14px', borderRadius: 'var(--radius-sm)', marginBottom: '16px', border: '1px solid var(--border-color)' }}>
+                  <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>السيارة: <strong style={{ color: 'var(--text-main)' }}>{selectedInst.carTitle}</strong></div>
+                  <div style={{ fontSize: '0.9rem', color: 'var(--ruby)', marginTop: '4px' }}>المبلغ المتبقي الكلي: <strong>{formatCurrency(selectedInst.remainingAmount)} ج.م</strong></div>
                 </div>
 
                 <div className="form-group">
@@ -223,7 +223,7 @@ export default function Installments({ installments, onRecordPayment }) {
                 <History size={22} color="var(--accent-primary)" />
                 <span>سجل تحصيلات {showHistoryModal.buyerName}</span>
               </div>
-              <button onClick={() => setShowHistoryModal(null)} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', fontSize: '1.2rem' }}>✕</button>
+              <button onClick={() => setShowHistoryModal(null)} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '1.2rem' }}>✕</button>
             </div>
 
             <div className="modal-body">
@@ -234,7 +234,7 @@ export default function Installments({ installments, onRecordPayment }) {
               ) : (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {showHistoryModal.history.map(item => (
-                    <div key={item.id} style={{ background: '#090d14', padding: '10px 14px', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.05)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div key={item.id} style={{ background: '#0f172a', padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <div>
                         <div style={{ fontWeight: 800, color: 'var(--emerald)' }}>+{formatCurrency(item.amount)} ج.م</div>
                         <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>{item.note || 'تحصيل قسط'}</div>

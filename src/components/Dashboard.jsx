@@ -28,7 +28,7 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
       {/* Top Banner / Welcome Owner */}
       <div className="glass-card" style={{
         padding: '24px',
-        background: 'linear-gradient(135deg, rgba(229, 193, 88, 0.08) 0%, rgba(18, 24, 36, 0.95) 100%)',
+        background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(15, 23, 42, 0.95) 100%)',
         border: '1px solid var(--border-active)',
         position: 'relative',
         overflow: 'hidden'
@@ -39,7 +39,7 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
           left: '-30px',
           width: '150px',
           height: '150px',
-          background: 'radial-gradient(circle, rgba(229, 193, 88, 0.15) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%)',
           pointerEvents: 'none'
         }} />
         
@@ -49,7 +49,7 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
               <Sparkles size={18} />
               <span>مرحباً بك في نظام معرض الماسة للسيارات</span>
             </div>
-            <h1 style={{ fontSize: '1.75rem', fontWeight: 900, color: '#fff' }}>
+            <h1 style={{ fontSize: '1.75rem', fontWeight: 900, color: 'var(--text-main)' }}>
               لوحة التحكم والمؤشرات المالية الشاملة
             </h1>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', marginTop: '4px' }}>
@@ -80,7 +80,7 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
         <div className="glass-card" style={{
           padding: '20px',
           borderRight: '4px solid var(--emerald)',
-          background: 'linear-gradient(180deg, rgba(16, 185, 129, 0.06) 0%, rgba(18, 24, 36, 0.9) 100%)'
+          background: 'linear-gradient(180deg, rgba(52, 211, 153, 0.06) 0%, rgba(15, 23, 42, 0.9) 100%)'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
             <span style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-muted)' }}>صافي الربح النهائي المعالج</span>
@@ -91,7 +91,7 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
           <div className="currency-emerald" style={{ fontSize: '1.85rem', marginBottom: '6px' }}>
             {formatCurrency(kpis.netProfit)} ج.م
           </div>
-          <div style={{ fontSize: '0.8rem', color: '#9ca3af', display: 'flex', alignItems: 'center', gap: '4px' }}>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
             <span>أرباح المبيعات خصم مصروفات المعرض</span>
           </div>
         </div>
@@ -100,18 +100,18 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
         <div className="glass-card" style={{
           padding: '20px',
           borderRight: '4px solid var(--accent-primary)',
-          background: 'linear-gradient(180deg, rgba(229, 193, 88, 0.06) 0%, rgba(18, 24, 36, 0.9) 100%)'
+          background: 'linear-gradient(180deg, rgba(99, 102, 241, 0.06) 0%, rgba(15, 23, 42, 0.9) 100%)'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
             <span style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-muted)' }}>رأس المال المعلق بالمخزون</span>
-            <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(229, 193, 88, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(99, 102, 241, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Car size={20} color="var(--accent-primary)" />
             </div>
           </div>
           <div className="currency-accent" style={{ fontSize: '1.85rem', marginBottom: '6px' }}>
             {formatCurrency(kpis.inventoryCapital)} ج.م
           </div>
-          <div style={{ fontSize: '0.8rem', color: '#9ca3af' }}>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
             تكلفة شراء وتجهيز {kpis.availableCarsCount} سيارة متاحة بالمعرض
           </div>
         </div>
@@ -119,7 +119,8 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
         {/* Card 3: Gross Sales Revenue (إجمالي إيرادات المبيعات) */}
         <div className="glass-card" style={{
           padding: '20px',
-          borderRight: '4px solid var(--sapphire)'
+          borderRight: '4px solid var(--sapphire)',
+          background: 'linear-gradient(180deg, rgba(96, 165, 250, 0.06) 0%, rgba(15, 23, 42, 0.9) 100%)'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
             <span style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-muted)' }}>إجمالي إيرادات المبايعات</span>
@@ -130,7 +131,7 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
           <div style={{ fontSize: '1.85rem', fontWeight: 800, color: '#93c5fd', marginBottom: '6px', fontFamily: 'monospace' }}>
             {formatCurrency(kpis.totalSalesRevenue)} ج.م
           </div>
-          <div style={{ fontSize: '0.8rem', color: '#9ca3af' }}>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
             من إجمالي {kpis.soldCarsCount} سيارة مباعة بالمعرض
           </div>
         </div>
@@ -138,7 +139,8 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
         {/* Card 4: Total Showroom Expenses (إجمالي المصروفات العامة) */}
         <div className="glass-card" style={{
           padding: '20px',
-          borderRight: '4px solid var(--ruby)'
+          borderRight: '4px solid var(--ruby)',
+          background: 'linear-gradient(180deg, rgba(251, 113, 133, 0.06) 0%, rgba(15, 23, 42, 0.9) 100%)'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
             <span style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-muted)' }}>مصروفات المعرض التشغيلية</span>
@@ -149,7 +151,7 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
           <div style={{ fontSize: '1.85rem', fontWeight: 800, color: '#fca5a5', marginBottom: '6px', fontFamily: 'monospace' }}>
             {formatCurrency(kpis.totalExpenses)} ج.م
           </div>
-          <div style={{ fontSize: '0.8rem', color: '#9ca3af' }}>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
             إيجارات، كهرباء، رواتب، وتسويق
           </div>
         </div>
@@ -157,7 +159,8 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
         {/* Card 5: Outstanding Installments (أقساط ومستحقات العملاء) */}
         <div className="glass-card" style={{
           padding: '20px',
-          borderRight: '4px solid var(--amber)'
+          borderRight: '4px solid var(--amber)',
+          background: 'linear-gradient(180deg, rgba(251, 191, 36, 0.06) 0%, rgba(15, 23, 42, 0.9) 100%)'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
             <span style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-muted)' }}>ديون وأقساط العملاء المتبقية</span>
@@ -168,7 +171,7 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
           <div style={{ fontSize: '1.85rem', fontWeight: 800, color: '#fcd34d', marginBottom: '6px', fontFamily: 'monospace' }}>
             {formatCurrency(kpis.totalInstallmentsDebt)} ج.م
           </div>
-          <div style={{ fontSize: '0.8rem', color: '#9ca3af' }}>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
             مستحقات آجلة قيد التحصيل الفعلي
           </div>
         </div>
@@ -195,13 +198,13 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <div style={{
-              background: '#0d121c',
+              background: '#0f172a',
               padding: '12px 16px',
               borderRadius: 'var(--radius-sm)',
               display: 'flex',
-              justify: 'space-between',
+              justifyContent: 'space-between',
               alignItems: 'center',
-              border: '1px solid rgba(255, 255, 255, 0.05)'
+              border: '1px solid rgba(148, 163, 184, 0.06)'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <span className="badge badge-emerald">متاحة للمعرض</span>
@@ -211,13 +214,13 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
             </div>
 
             <div style={{
-              background: '#0d121c',
+              background: '#0f172a',
               padding: '12px 16px',
               borderRadius: 'var(--radius-sm)',
               display: 'flex',
-              justify: 'space-between',
+              justifyContent: 'space-between',
               alignItems: 'center',
-              border: '1px solid rgba(255, 255, 255, 0.05)'
+              border: '1px solid rgba(148, 163, 184, 0.06)'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <span className="badge badge-amber">قيد التجهيز والصيانة</span>
@@ -227,13 +230,13 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
             </div>
 
             <div style={{
-              background: '#0d121c',
+              background: '#0f172a',
               padding: '12px 16px',
               borderRadius: 'var(--radius-sm)',
               display: 'flex',
-              justify: 'space-between',
+              justifyContent: 'space-between',
               alignItems: 'center',
-              border: '1px solid rgba(255, 255, 255, 0.05)'
+              border: '1px solid rgba(148, 163, 184, 0.06)'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <span className="badge badge-sapphire">تم البيع بنجاح</span>
@@ -261,16 +264,16 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
             ) : (
               soldCars.slice(0, 3).map(car => (
                 <div key={car.id} style={{
-                  background: '#0d121c',
+                  background: '#0f172a',
                   padding: '12px 14px',
                   borderRadius: 'var(--radius-sm)',
                   display: 'flex',
-                  justify: 'space-between',
+                  justifyContent: 'space-between',
                   alignItems: 'center',
-                  border: '1px solid rgba(229, 193, 88, 0.1)'
+                  border: '1px solid rgba(99, 102, 241, 0.1)'
                 }}>
                   <div>
-                    <div style={{ fontWeight: 800, fontSize: '0.95rem', color: '#fff' }}>
+                    <div style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--text-main)' }}>
                       {car.brand} {car.model} ({car.year})
                     </div>
                     <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
