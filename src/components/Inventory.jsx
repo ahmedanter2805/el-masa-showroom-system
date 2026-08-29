@@ -53,8 +53,8 @@ export default function Inventory({ cars, onOpenAddCar, onEditCar, onDeleteCar, 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           
           <div>
-            <h2 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--gold-light)', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <Car size={24} color="var(--gold-primary)" />
+            <h2 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--accent-light)', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <Car size={24} color="var(--accent-primary)" />
               <span>إدارة المخزون وأسطول السيارات ({filteredCars.length})</span>
             </h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', marginTop: '2px' }}>
@@ -62,7 +62,7 @@ export default function Inventory({ cars, onOpenAddCar, onEditCar, onDeleteCar, 
             </p>
           </div>
 
-          <button className="btn-gold" onClick={onOpenAddCar}>
+          <button className="btn-accent" onClick={onOpenAddCar}>
             <Plus size={18} />
             <span>إضافة سيارة جديدة</span>
           </button>
@@ -100,7 +100,7 @@ export default function Inventory({ cars, onOpenAddCar, onEditCar, onDeleteCar, 
                 key={btn.id}
                 onClick={() => setStatusFilter(btn.id)}
                 style={{
-                  background: statusFilter === btn.id ? 'var(--gold-gradient)' : 'rgba(255, 255, 255, 0.05)',
+                  background: statusFilter === btn.id ? 'var(--accent-gradient)' : 'rgba(255, 255, 255, 0.05)',
                   color: statusFilter === btn.id ? '#0b0e14' : 'var(--text-main)',
                   border: '1px solid rgba(255, 255, 255, 0.1)',
                   borderRadius: 'var(--radius-sm)',
@@ -143,7 +143,7 @@ export default function Inventory({ cars, onOpenAddCar, onEditCar, onDeleteCar, 
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
                   <div>
-                    <span style={{ fontSize: '0.78rem', color: 'var(--gold-primary)', fontWeight: 800 }}>{car.id}</span>
+                    <span style={{ fontSize: '0.78rem', color: 'var(--accent-primary)', fontWeight: 800 }}>{car.id}</span>
                     <h3 style={{ fontSize: '1.2rem', fontWeight: 900, color: '#fff', lineHeight: 1.3 }}>
                       {car.brand} {car.model}
                     </h3>
@@ -190,7 +190,7 @@ export default function Inventory({ cars, onOpenAddCar, onEditCar, onDeleteCar, 
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '6px' }}>
                   <span style={{ fontWeight: 800, color: 'var(--text-main)' }}>إجمالي التكلفة:</span>
-                  <span className="currency-gold" style={{ fontSize: '1rem' }}>{formatCurrency(car.totalCost)} ج.م</span>
+                  <span className="currency-accent" style={{ fontSize: '1rem' }}>{formatCurrency(car.totalCost)} ج.م</span>
                 </div>
 
                 {car.status === 'sold' && car.saleDetails ? (
@@ -221,7 +221,7 @@ export default function Inventory({ cars, onOpenAddCar, onEditCar, onDeleteCar, 
               {/* Card Action Buttons */}
               <div style={{ display: 'flex', gap: '8px', paddingTop: '6px' }}>
                 {car.status !== 'sold' ? (
-                  <button className="btn-gold" style={{ flex: 1, padding: '8px 12px', fontSize: '0.85rem' }} onClick={() => onOpenSellModal(car)}>
+                  <button className="btn-accent" style={{ flex: 1, padding: '8px 12px', fontSize: '0.85rem' }} onClick={() => onOpenSellModal(car)}>
                     <TrendingUp size={16} />
                     <span>إتمام بيع</span>
                   </button>

@@ -77,7 +77,7 @@ export default function CarModal({ isOpen, onClose, onSave, carToEdit }) {
         {/* Header */}
         <div className="modal-header">
           <div className="modal-title">
-            <Car size={22} color="var(--gold-primary)" />
+            <Car size={22} color="var(--accent-primary)" />
             <span>{carToEdit ? `تعديل بيانات سيارة (${carToEdit.id})` : 'إضافة سيارة جديدة للمخزون'}</span>
           </div>
           <button onClick={onClose} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', fontSize: '1.2rem' }}>
@@ -165,7 +165,7 @@ export default function CarModal({ isOpen, onClose, onSave, carToEdit }) {
 
             {/* Financials Calculation Section */}
             <div style={{ background: '#090d14', padding: '16px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)', marginBottom: '16px' }}>
-              <div style={{ fontSize: '0.9rem', fontWeight: 800, color: 'var(--gold-light)', marginBottom: '12px' }}>
+              <div style={{ fontSize: '0.9rem', fontWeight: 800, color: 'var(--accent-light)', marginBottom: '12px' }}>
                 التكاليف المالية وسعر البيع
               </div>
 
@@ -196,7 +196,7 @@ export default function CarModal({ isOpen, onClose, onSave, carToEdit }) {
 
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(229, 193, 88, 0.08)', padding: '10px 14px', borderRadius: '8px', marginBottom: '12px', border: '1px solid var(--border-active)' }}>
                 <span style={{ fontSize: '0.88rem', fontWeight: 800, color: 'var(--text-main)' }}>إجمالي التكلفة الحسابية على المعرض:</span>
-                <span className="currency-gold" style={{ fontSize: '1.1rem' }}>
+                <span className="currency-accent" style={{ fontSize: '1.1rem' }}>
                   {new Intl.NumberFormat('ar-EG').format(totalCostCalculated)} ج.م
                 </span>
               </div>
@@ -254,7 +254,7 @@ export default function CarModal({ isOpen, onClose, onSave, carToEdit }) {
           {/* Footer */}
           <div className="modal-footer">
             <button type="button" className="btn-outline" onClick={onClose}>إلغاء</button>
-            <button type="submit" className="btn-gold">
+            <button type="submit" className="btn-accent">
               <Save size={18} />
               <span>حفظ السيارة في المخزون</span>
             </button>

@@ -52,11 +52,11 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAddCar, onExport
               height: '46px',
               borderRadius: '12px',
               background: 'linear-gradient(135deg, #1f2738 0%, #0d121c 100%)',
-              border: '1.5px solid var(--gold-primary)',
+              border: '1.5px solid var(--accent-primary)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: 'var(--gold-glow)'
+              boxShadow: 'var(--accent-glow)'
             }}>
               <span style={{ fontSize: '1.4rem' }}>💎</span>
             </div>
@@ -64,7 +64,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAddCar, onExport
               <div style={{
                 fontSize: '1.25rem',
                 fontWeight: 900,
-                background: 'var(--gold-gradient)',
+                background: 'var(--accent-gradient)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 letterSpacing: '-0.3px',
@@ -89,14 +89,14 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAddCar, onExport
               alignItems: 'center',
               gap: '8px'
             }}>
-              <Sparkles size={16} color="var(--gold-primary)" />
+              <Sparkles size={16} color="var(--accent-primary)" />
               <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: 700 }}>صافي الربح العام:</span>
               <span className="currency-emerald" style={{ fontSize: '0.95rem' }}>
                 {formatCurrency(netProfit)} ج.م
               </span>
             </div>
 
-            <button className="btn-gold" onClick={onOpenAddCar}>
+            <button className="btn-accent" onClick={onOpenAddCar}>
               <Plus size={18} />
               <span>إضافة سيارة جديدة</span>
             </button>
@@ -125,9 +125,9 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAddCar, onExport
                   onClick={() => setActiveTab(item.id)}
                   style={{
                     background: isActive ? 'rgba(229, 193, 88, 0.12)' : 'transparent',
-                    color: isActive ? 'var(--gold-light)' : 'var(--text-muted)',
+                    color: isActive ? 'var(--accent-light)' : 'var(--text-muted)',
                     border: 'none',
-                    borderBottom: isActive ? '2.5px solid var(--gold-primary)' : '2.5px solid transparent',
+                    borderBottom: isActive ? '2.5px solid var(--accent-primary)' : '2.5px solid transparent',
                     padding: '12px 18px',
                     fontWeight: isActive ? 800 : 600,
                     fontSize: '0.92rem',
@@ -139,7 +139,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAddCar, onExport
                     transition: 'all 0.2s ease'
                   }}
                 >
-                  <Icon size={18} color={isActive ? 'var(--gold-primary)' : 'var(--text-muted)'} />
+                  <Icon size={18} color={isActive ? 'var(--accent-primary)' : 'var(--text-muted)'} />
                   <span>{item.label}</span>
                 </button>
               );
@@ -174,7 +174,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAddCar, onExport
               style={{
                 background: 'transparent',
                 border: 'none',
-                color: isActive ? 'var(--gold-primary)' : '#6b7280',
+                color: isActive ? 'var(--accent-primary)' : '#6b7280',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',

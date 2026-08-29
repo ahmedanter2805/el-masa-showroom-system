@@ -42,7 +42,7 @@ export default function InvoicePrint({ car, onClose }) {
         </button>
 
         <div style={{ display: 'flex', gap: '10px' }}>
-          <button className="btn-gold" onClick={handlePrint}>
+          <button className="btn-accent" onClick={handlePrint}>
             <Printer size={18} />
             <span>طباعة العقد والفاتورة فوراً (PDF)</span>
           </button>

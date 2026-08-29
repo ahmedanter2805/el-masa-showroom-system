@@ -41,8 +41,8 @@ export default function SalesPurchases({ cars, onPrintInvoice }) {
       <div className="glass-card" style={{ padding: '20px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <h2 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--gold-light)', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <TrendingUp size={24} color="var(--gold-primary)" />
+            <h2 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--accent-light)', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <TrendingUp size={24} color="var(--accent-primary)" />
               <span>سجل وعقود مبيعات معرض الماسة ({filteredSales.length})</span>
             </h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', marginTop: '2px' }}>
@@ -103,7 +103,7 @@ export default function SalesPurchases({ cars, onPrintInvoice }) {
                 return (
                   <tr key={car.id}>
                     <td>
-                      <span style={{ fontWeight: 800, color: 'var(--gold-primary)' }}>{car.id}</span>
+                      <span style={{ fontWeight: 800, color: 'var(--accent-primary)' }}>{car.id}</span>
                     </td>
                     <td>
                       <div style={{ fontWeight: 800, color: '#fff' }}>{car.brand} {car.model}</div>
@@ -124,7 +124,7 @@ export default function SalesPurchases({ cars, onPrintInvoice }) {
                     </td>
                     <td>
                       <div style={{ fontWeight: 700 }}>{s.buyerName}</div>
-                      <div style={{ fontSize: '0.78rem', color: 'var(--gold-light)' }}>{s.buyerPhone}</div>
+                      <div style={{ fontSize: '0.78rem', color: 'var(--accent-light)' }}>{s.buyerPhone}</div>
                     </td>
                     <td>
                       {s.paymentMethod === 'cash' ? (
@@ -136,7 +136,7 @@ export default function SalesPurchases({ cars, onPrintInvoice }) {
                     <td>{s.saleDate}</td>
                     <td style={{ textAlign: 'center' }}>
                       <button 
-                        className="btn-gold" 
+                        className="btn-accent" 
                         style={{ padding: '6px 12px', fontSize: '0.8rem' }}
                         onClick={() => onPrintInvoice(car)}
                       >
@@ -152,7 +152,7 @@ export default function SalesPurchases({ cars, onPrintInvoice }) {
           {filteredSales.length > 0 && (
             <tfoot>
               <tr style={{ background: '#090d14', fontWeight: 900, borderTop: '2px solid var(--border-color)' }}>
-                <td colSpan="3" style={{ color: 'var(--gold-light)' }}>إجمالي مبيعات جدول العرض الحالي:</td>
+                <td colSpan="3" style={{ color: 'var(--accent-light)' }}>إجمالي مبيعات جدول العرض الحالي:</td>
                 <td>{formatCurrency(totalCost)} ج.م</td>
                 <td style={{ color: '#fff' }}>{formatCurrency(totalRevenue)} ج.م</td>
                 <td className="currency-emerald">+{formatCurrency(totalProfit)} ج.م</td>

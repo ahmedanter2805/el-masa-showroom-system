@@ -48,8 +48,8 @@ export default function Installments({ installments, onRecordPayment }) {
       <div className="glass-card" style={{ padding: '20px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <h2 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--gold-light)', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <CreditCard size={24} color="var(--gold-primary)" />
+            <h2 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--accent-light)', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <CreditCard size={24} color="var(--accent-primary)" />
               <span>إدارة وتتبع الأقساط والمستحقات ({filteredInstallments.length})</span>
             </h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', marginTop: '2px' }}>
@@ -107,11 +107,11 @@ export default function Installments({ installments, onRecordPayment }) {
               filteredInstallments.map(inst => (
                 <tr key={inst.id}>
                   <td>
-                    <span style={{ fontWeight: 800, color: 'var(--gold-primary)' }}>{inst.id}</span>
+                    <span style={{ fontWeight: 800, color: 'var(--accent-primary)' }}>{inst.id}</span>
                   </td>
                   <td>
                     <div style={{ fontWeight: 800, color: '#fff' }}>{inst.buyerName}</div>
-                    <div style={{ fontSize: '0.78rem', color: 'var(--gold-light)' }}>{inst.buyerPhone}</div>
+                    <div style={{ fontSize: '0.78rem', color: 'var(--accent-light)' }}>{inst.buyerPhone}</div>
                   </td>
                   <td>{inst.carTitle}</td>
                   <td>{formatCurrency(inst.totalAmount)} ج.م</td>
@@ -135,7 +135,7 @@ export default function Installments({ installments, onRecordPayment }) {
                     <div style={{ display: 'flex', gap: '6px', justifyContent: 'center' }}>
                       {inst.remainingAmount > 0 && (
                         <button 
-                          className="btn-gold" 
+                          className="btn-accent" 
                           style={{ padding: '6px 12px', fontSize: '0.8rem' }}
                           onClick={() => {
                             setSelectedInst(inst);
@@ -169,7 +169,7 @@ export default function Installments({ installments, onRecordPayment }) {
           <div className="modal-container">
             <div className="modal-header">
               <div className="modal-title">
-                <CreditCard size={22} color="var(--gold-primary)" />
+                <CreditCard size={22} color="var(--accent-primary)" />
                 <span>تحصيل قسط شهري لـ {selectedInst.buyerName}</span>
               </div>
               <button onClick={() => setSelectedInst(null)} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', fontSize: '1.2rem' }}>✕</button>
@@ -207,7 +207,7 @@ export default function Installments({ installments, onRecordPayment }) {
 
               <div className="modal-footer">
                 <button type="button" className="btn-outline" onClick={() => setSelectedInst(null)}>إلغاء</button>
-                <button type="submit" className="btn-gold">تأكيد التحصيل</button>
+                <button type="submit" className="btn-accent">تأكيد التحصيل</button>
               </div>
             </form>
           </div>
@@ -220,7 +220,7 @@ export default function Installments({ installments, onRecordPayment }) {
           <div className="modal-container">
             <div className="modal-header">
               <div className="modal-title">
-                <History size={22} color="var(--gold-primary)" />
+                <History size={22} color="var(--accent-primary)" />
                 <span>سجل تحصيلات {showHistoryModal.buyerName}</span>
               </div>
               <button onClick={() => setShowHistoryModal(null)} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', fontSize: '1.2rem' }}>✕</button>

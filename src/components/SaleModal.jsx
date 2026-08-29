@@ -79,7 +79,7 @@ export default function SaleModal({ car, isOpen, onClose, onConfirmSale }) {
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', color: 'var(--text-muted)' }}>
                 <span>إجمالي التكلفة الحسابية على المعرض:</span>
-                <span style={{ color: 'var(--gold-primary)', fontWeight: 700 }}>{formatCurrency(car.totalCost)} ج.م</span>
+                <span style={{ color: 'var(--accent-primary)', fontWeight: 700 }}>{formatCurrency(car.totalCost)} ج.م</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '6px' }}>
                 <span style={{ fontSize: '1rem', fontWeight: 800, color: '#fff', display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -203,7 +203,7 @@ export default function SaleModal({ car, isOpen, onClose, onConfirmSale }) {
 
           <div className="modal-footer">
             <button type="button" className="btn-outline" onClick={onClose}>إلغاء</button>
-            <button type="submit" className="btn-gold">
+            <button type="submit" className="btn-accent">
               <TrendingUp size={18} />
               <span>تأكيد وتسجيل عملية البيع</span>
             </button>

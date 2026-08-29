@@ -49,7 +49,7 @@ export default function ExcelManager({ cars, installments, expenses, kpis, onExp
             <FileSpreadsheet size={26} color="#34d399" />
           </div>
           <div>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: 'var(--gold-light)' }}>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: 'var(--accent-light)' }}>
               مركز ربط وتصدير شيتات Excel والتليفون
             </h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
@@ -69,7 +69,7 @@ export default function ExcelManager({ cars, installments, expenses, kpis, onExp
         {/* Export to Excel Card */}
         <div className="glass-card" style={{ padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--gold-primary)', fontWeight: 800, marginBottom: '10px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--accent-primary)', fontWeight: 800, marginBottom: '10px' }}>
               <Download size={22} />
               <span style={{ fontSize: '1.15rem' }}>تصدير حسابات المعرض لملف Excel</span>
             </div>
@@ -85,7 +85,7 @@ export default function ExcelManager({ cars, installments, expenses, kpis, onExp
             </ul>
           </div>
 
-          <button className="btn-gold" style={{ width: '100%', justifyContent: 'center', padding: '12px' }} onClick={onExport}>
+          <button className="btn-accent" style={{ width: '100%', justifyContent: 'center', padding: '12px' }} onClick={onExport}>
             <Download size={20} />
             <span>تنزيل ملف Excel (.xlsx) الآن</span>
           </button>
@@ -143,9 +143,9 @@ export default function ExcelManager({ cars, installments, expenses, kpis, onExp
       </div>
 
       {/* Mobile Usage Guide */}
-      <div className="glass-card" style={{ padding: '20px', borderRight: '4px solid var(--gold-primary)' }}>
-        <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--gold-light)', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-          <Smartphone size={20} color="var(--gold-primary)" />
+      <div className="glass-card" style={{ padding: '20px', borderRight: '4px solid var(--accent-primary)' }}>
+        <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent-light)', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+          <Smartphone size={20} color="var(--accent-primary)" />
           <span>طريقة فتح شيت Excel وحفظه على الهاتف المحمول (التليفون)</span>
         </h3>
         <div style={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.7 }}>

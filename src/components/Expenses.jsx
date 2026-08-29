@@ -42,7 +42,7 @@ export default function Expenses({ expenses, onAddExpense, onDeleteExpense }) {
 
   const getCategoryLabel = (cat) => {
     switch (cat) {
-      case 'rent': return { label: 'إيجار المقر', icon: Building, color: 'var(--gold-primary)' };
+      case 'rent': return { label: 'إيجار المقر', icon: Building, color: 'var(--accent-primary)' };
       case 'utilities': return { label: 'مرافق وكهرباء', icon: Zap, color: '#60a5fa' };
       case 'marketing': return { label: 'تسويق وإعلانات', icon: Megaphone, color: '#c084fc' };
       case 'salaries': return { label: 'رواتب موظفين', icon: Users, color: '#34d399' };
@@ -57,8 +57,8 @@ export default function Expenses({ expenses, onAddExpense, onDeleteExpense }) {
       <div className="glass-card" style={{ padding: '20px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <h2 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--gold-light)', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <Receipt size={24} color="var(--gold-primary)" />
+            <h2 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--accent-light)', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <Receipt size={24} color="var(--accent-primary)" />
               <span>مصروفات وتكاليف المعرض التشغيلية</span>
             </h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', marginTop: '2px' }}>
@@ -84,8 +84,8 @@ export default function Expenses({ expenses, onAddExpense, onDeleteExpense }) {
         
         {/* Expense Entry Form */}
         <div className="glass-card" style={{ padding: '20px' }}>
-          <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--gold-light)', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Plus size={18} color="var(--gold-primary)" />
+          <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent-light)', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Plus size={18} color="var(--accent-primary)" />
             <span>تسجيل مصروف جديد</span>
           </h3>
 
@@ -151,7 +151,7 @@ export default function Expenses({ expenses, onAddExpense, onDeleteExpense }) {
               />
             </div>
 
-            <button type="submit" className="btn-gold" style={{ width: '100%', marginTop: '10px' }}>
+            <button type="submit" className="btn-accent" style={{ width: '100%', marginTop: '10px' }}>
               <Plus size={18} />
               <span>إضافة المصروف الحسابي</span>
             </button>
@@ -160,7 +160,7 @@ export default function Expenses({ expenses, onAddExpense, onDeleteExpense }) {
 
         {/* Expense Log History List */}
         <div className="glass-card" style={{ padding: '20px' }}>
-          <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--gold-light)', marginBottom: '16px' }}>
+          <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent-light)', marginBottom: '16px' }}>
             سجل المصروفات المخصومة ({expenses.length})
           </h3>
 

@@ -45,7 +45,7 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
         
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--gold-primary)', fontWeight: 800, fontSize: '0.9rem', marginBottom: '4px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--accent-primary)', fontWeight: 800, fontSize: '0.9rem', marginBottom: '4px' }}>
               <Sparkles size={18} />
               <span>مرحباً بك في نظام معرض الماسة للسيارات</span>
             </div>
@@ -58,7 +58,7 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
           </div>
 
           <div style={{ display: 'flex', gap: '10px' }}>
-            <button className="btn-gold" onClick={() => onNavigateTab('sales')}>
+            <button className="btn-accent" onClick={() => onNavigateTab('sales')}>
               <TrendingUp size={18} />
               <span>سجل المبيعات والتسليم</span>
             </button>
@@ -99,16 +99,16 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
         {/* Card 2: Active Inventory Capital (رأس المال في السيارات المتاحة) */}
         <div className="glass-card" style={{
           padding: '20px',
-          borderRight: '4px solid var(--gold-primary)',
+          borderRight: '4px solid var(--accent-primary)',
           background: 'linear-gradient(180deg, rgba(229, 193, 88, 0.06) 0%, rgba(18, 24, 36, 0.9) 100%)'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
             <span style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-muted)' }}>رأس المال المعلق بالمخزون</span>
             <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(229, 193, 88, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Car size={20} color="var(--gold-primary)" />
+              <Car size={20} color="var(--accent-primary)" />
             </div>
           </div>
-          <div className="currency-gold" style={{ fontSize: '1.85rem', marginBottom: '6px' }}>
+          <div className="currency-accent" style={{ fontSize: '1.85rem', marginBottom: '6px' }}>
             {formatCurrency(kpis.inventoryCapital)} ج.م
           </div>
           <div style={{ fontSize: '0.8rem', color: '#9ca3af' }}>
@@ -184,7 +184,7 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
         {/* Cars Inventory Status Panel */}
         <div className="glass-card" style={{ padding: '20px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--gold-light)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent-light)', display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Car size={20} />
               <span>حالة أسطول السيارات الحالي</span>
             </h3>
@@ -247,8 +247,8 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
         {/* Recent Sold Cars & Profit Highlights */}
         <div className="glass-card" style={{ padding: '20px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--gold-light)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Sparkles size={20} color="var(--gold-primary)" />
+            <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent-light)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Sparkles size={20} color="var(--accent-primary)" />
               <span>آخر السيارات المباعة وأرباحها</span>
             </h3>
           </div>
@@ -282,7 +282,7 @@ export default function Dashboard({ kpis, cars, expenses, installments, onNaviga
                     <div className="currency-emerald" style={{ fontSize: '1rem' }}>
                       +{formatCurrency(car.saleDetails?.netProfit)} ج.م
                     </div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--gold-light)' }}>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--accent-light)' }}>
                       ربح {car.saleDetails?.profitMargin}%
                     </div>
                   </div>
